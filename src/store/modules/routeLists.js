@@ -197,6 +197,29 @@ const state = {
                 });
             }
         },
+        {
+            path: '/directive',
+            name: 'vue指令',
+            meta: { role: 'directive' },
+            component: (resolve) => {
+                require.ensure(['@/views/directive/directive'], (require) => {
+                    resolve(require('@/views/directive/directive'));
+                });
+            },
+            redirect: {name:'节流指令'},
+            children:[
+                {
+                    path: '/directive/throttle',
+                    name:'节流指令',
+                    meta: { role: 'throttle' },
+                    component: (resolve) => {
+                        require.ensure(['@/views/directive/throttle'], (require) => {
+                            resolve(require('@/views/directive/throttle'));
+                        });
+                    },
+                },
+            ]
+        },
     ]
 };
 const mutations = {
