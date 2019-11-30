@@ -1,6 +1,10 @@
 <template>
     <div class="">
-      <button ref="target" v-throttle="{fun:sayHello}">提交</button>
+      <p>防抖</p>
+     <input type="text" v-debounce="{fun:sayHello}">
+     <p>节流</p>
+    <button ref="target" v-throttle="{fun:sayHello}">提交</button>
+
     </div>
 </template>
 

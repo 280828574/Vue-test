@@ -11,8 +11,8 @@ import vueTouch from 'kim-vue-touch';
 
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
-import '@/directive/throttle';
-import  '@/directive/throttle';
+import '@/directive/directive';
+import  '@/directive/directive';
 Vue.config.productionTip = false;
 
 Vue.prototype.$api = api;

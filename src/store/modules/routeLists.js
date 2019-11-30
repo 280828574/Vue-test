@@ -206,11 +206,11 @@ const state = {
                     resolve(require('@/views/directive/directive'));
                 });
             },
-            redirect: {name:'节流指令'},
+            redirect: {name:'节流/防抖指令'},
             children:[
                 {
                     path: '/directive/throttle',
-                    name:'节流指令',
+                    name:'节流/防抖指令',
                     meta: { role: 'throttle' },
                     component: (resolve) => {
                         require.ensure(['@/views/directive/throttle'], (require) => {
