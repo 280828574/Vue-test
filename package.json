@@ -1,0 +1,38 @@
+{
+  "name": "text",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "vue-cli-service serve",
+    "dev-t": "vue-cli-service serve --mode test",
+    "dev-s": "vue-cli-service serve --mode stage",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "element-ui": "^2.13.0",
+    "js-base64": "^2.4.9",
+    "vue": "^2.6.1",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.2.0",
+    "@vue/cli-plugin-eslint": "^3.2.1",
+    "@vue/cli-service": "^3.2.0",
+    "axios": "^0.18.0",
+    "babel-eslint": "^10.0.1",
+    "css-loader": "^2.1.1",
+    "eslint": "^5.8.0",
+    "eslint-plugin-vue": "^5.0.0-0",
+    "http-proxy-middleware": "^0.19.1",
+    "kim-vue-touch": "^1.1.4",
+    "less-loader": "^4.1.0",
+    "node-sass": "^4.9.0",
+    "sass-loader": "^7.0.1",
+    "style-loader": "^0.23.1",
+    "vue-loader": "^15.7.0",
+    "vue-particles": "^1.0.9",
+    "vue-template-compiler": "^2.5.17"
+  }
+}

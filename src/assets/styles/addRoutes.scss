@@ -1,0 +1,7 @@
+.box {
+    overflow: hidden; /**需要配合overflow才能生效**/
+    resize: both;
+    background: $MainBodyColor;
+    width: 150px;
+    height: 150px;
+}
