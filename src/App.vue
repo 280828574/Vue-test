@@ -1,43 +1,43 @@
 <template>
-    <div id="app">
-        <div id="nav">
-            <router-link v-for="(item,key) in routers" :key="key" :to="item.path">{{item.name}}</router-link>
-        </div>
-        <router-view/>
+  <div id="app">
+    <div id="nav">
+      <router-link v-for="(item,key) in routers" :key="key" :to="item.path">{{ item.name }}</router-link>
     </div>
+    <router-view :key="$route.fullPath" />
+  </div>
 </template>
 
 <script>
 export default {
-    data: function () {
-        return {
-            routers: []
-        };
-    },
-    created: function () {
-        this.initRoutesList();
-        this.initRoutes();
-    },
-    methods: {
-        initRoutesList() {
-            this.routers = [];
-            this.$router.options.routes.forEach(item => {
-                this.routers.push(item);
-            });
-        },
-        initRoutes(){
-            let roles = window.sessionStorage.getItem('roles');
-            if(roles){
-                this.$store.dispatch('setRouteLists',JSON.parse(roles));
-            }
-        }
-    },
-    watch:{
-        '$route':function () {
-            this.initRoutesList();
-        }
+  data: function() {
+    return {
+      routers: []
     }
-};
+  },
+  watch: {
+    '$route': function() {
+      this.initRoutesList()
+    }
+  },
+  created: function() {
+    this.initRoutesList()
+    this.initRoutes()
+  },
+  methods: {
+    initRoutesList() {
+      this.routers = []
+      this.$router.options.routes.forEach(item => {
+        this.routers.push(item)
+      })
+    },
+    initRoutes() {
+      let roles = window.sessionStorage.getItem('roles')
+      if (roles) {
+        this.$store.dispatch('setRouteLists', JSON.parse(roles))
+      }
+    }
+  }
+}
 </script>
 
 <style lang="scss">
