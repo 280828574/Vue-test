@@ -1,43 +1,43 @@
 <template>
-    <div>
-        异步组件测试
-        点击按钮后
-        第一个延迟300毫秒，从服务器加载
-        第二个不延迟从服务器加载
-        <template v-if="show">
-            <later></later>
-            <later2></later2>
-        </template>
-        <button @click="toggle">加载</button>
-        <img src="" alt="" class="img"/>
-    </div>
+  <div>
+    异步组件测试
+    点击按钮后
+    第一个延迟300毫秒，从服务器加载
+    第二个不延迟从服务器加载
+    <template v-if="show">
+      <later></later>
+      <later2></later2>
+    </template>
+    <button @click="toggle">加载</button>
+    <img src="" alt="" class="img" />
+  </div>
 </template>
 <script>
-import Vue from 'vue';
-const later = Vue.component('later', function (resolve) {
-    setTimeout(function () {
-        require(['@/components/later.vue'], resolve);
-    }, 3000);
-});
-const later2 = Vue.component('later2', function (resolve) {
-    require(['@/components/later2.vue'], resolve);
-});
-export default{
-    data: function () {
-        return {
-            show: false
-        };
-    },
-    components: {
-        later,
-        later2,
-    },
-    methods: {
-        toggle:function () {
-            this.show = !this.show;
-        }
-    },
-};
+import Vue from 'vue'
+const later = Vue.component('later', function(resolve) {
+  setTimeout(function() {
+    require(['@/components/later.vue'], resolve)
+  }, 3000)
+})
+const later2 = Vue.component('later2', function(resolve) {
+  require(['@/components/later2.vue'], resolve)
+})
+export default {
+  components: {
+    later,
+    later2
+  },
+  data: function() {
+    return {
+      show: false
+    }
+  },
+  methods: {
+    toggle: function() {
+      this.show = !this.show
+    }
+  }
+}
 </script>
 <style>
     .img{
