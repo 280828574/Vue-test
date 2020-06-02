@@ -1,3 +1,4 @@
+/* eslint-disable */
 (function() {
   var root = (typeof self === 'object' && self.self == self && self) ||
         (typeof global === 'object' && global.global == global && global) ||
@@ -162,6 +163,9 @@
   }
 
   proto.createSlider = function() {
+      if(!this.options.el){
+          return
+      }
     this.options.el.innerHTML = `
     <div id="slider">
         <div class="drag_bg"></div>
@@ -242,6 +246,9 @@
   }
   proto.bindEvents = function() {
     var self = this
+    if(!self.handler){
+        return
+    }
     self.handler.onmousedown = function(e) {
       self.diffX = e.clientX - self.handler.offsetLeft
       util.setClassName(self.slider, 'unselect')
@@ -264,6 +271,9 @@
         if (self.flag) {
           util.setClassName(self.slider, 'slide_ok')
           util.addClass(self.handler, 'handler_ok_bg')
+          if(!self.handler){
+            return
+          }
           self.handler.onmousedown = null
           self.emit('complete')
         } else {
@@ -284,8 +294,3 @@
     root.SliderTools = SliderTools
   }
 }())
-
-let slider = new SliderTools()
-slider.on('complete', () => {
-  alert('验证完成')
-})

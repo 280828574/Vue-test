@@ -150,8 +150,8 @@ const state = {
           name: 'sliderTools',
           meta: { role: 'sliderTools' },
           component: (resolve) => {
-            require.ensure(['@/views/plugIn/sliderTools'], (require) => {
-              resolve(require('@/views/plugIn/sliderTools'))
+            require.ensure(['@/views/plugIn/sliderTools/index'], (require) => {
+              resolve(require('@/views/plugIn/sliderTools/index'))
             })
           }
         },

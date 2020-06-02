@@ -5,6 +5,7 @@
 </template>
 <script>
 let me;
+import "./sliderTools";
 export default {
   name: "SliderToolsWrap",
   data() {
