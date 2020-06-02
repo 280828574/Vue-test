@@ -144,7 +144,17 @@ const state = {
               resolve(require('@/views/plugIn/html2canvas'))
             })
           }
-        }
+        },
+        {
+          path: '/plugIn/sliderTools',
+          name: 'sliderTools',
+          meta: { role: 'sliderTools' },
+          component: (resolve) => {
+            require.ensure(['@/views/plugIn/sliderTools'], (require) => {
+              resolve(require('@/views/plugIn/sliderTools'))
+            })
+          }
+        },
       ]
     },
     {
